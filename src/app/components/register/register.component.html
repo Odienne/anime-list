@@ -1,0 +1,12 @@
+<ion-row class="ion-justify-content-center">
+  <ion-col size="10">
+    <form #f="ngForm" [formGroup]="myForm" (ngSubmit)="onSubmit(f)">
+        <ion-input required type="text" placeholder="Identifiant" id="username" formControlName="username"></ion-input>
+        <ion-input required type="password" placeholder="Mot de passe" id="pwd" formControlName="pwd"></ion-input>
+      <div align="center">
+        <ion-button type="submit">Créer un compte</ion-button> 
+        <ion-button href="/" routerLinkActive="active">Retour</ion-button>       
+      </div>
+    </form>
+  </ion-col>
+</ion-row>

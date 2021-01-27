@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Watchlist
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let anime of computedWatchlist">
+    <ion-item class="listing-item" [routerLink]="['/detail', anime.mal_id]">
+      <ion-thumbnail slot="start">
+        <img src="{{anime.image_url}}" alt="{{anime.title}}">
+      </ion-thumbnail>
+      <ion-title class="anime-small-title">
+        {{anime.title}}
+      </ion-title>
+    </ion-item>
+  </ion-list>
+</ion-content>

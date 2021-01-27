@@ -1,0 +1,12 @@
+<div>
+    <ion-list *ngFor="let list_anime of animes">
+        <ion-item [routerLink]="['/detail', list_anime.mal_id]">
+            <ion-thumbnail slot="start">
+                <img src="{{list_anime.image_url}}" alt="{{list_anime.title}}">
+            </ion-thumbnail>
+            <ion-title class="anime-small-title">
+                {{list_anime.title}}
+            </ion-title>
+        </ion-item>
+    </ion-list>
+</div>

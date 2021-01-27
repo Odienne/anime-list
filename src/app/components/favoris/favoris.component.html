@@ -1,0 +1,11 @@
+<div *ngFor="let anime of this.favoris.array" class="anime" id="{{anime.id}}">
+  <ion-item class="anime-item" [routerLink]="['/detail', anime.id]">
+    <ion-thumbnail>
+      <img src="{{anime.img}}" alt="Anime image">
+    </ion-thumbnail>
+    <ion-toolbar>
+      <ion-text>{{anime.nom}}</ion-text>
+    </ion-toolbar>
+  </ion-item>
+  <ion-button (click)="delete(anime.id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+</div>

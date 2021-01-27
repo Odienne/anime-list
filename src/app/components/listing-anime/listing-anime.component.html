@@ -1,0 +1,19 @@
+<ion-searchbar [(ngModel)]="searchValue" (ionInput)="searchAnimes(searchValue)" name="searchValue"
+               placeholder="Bleach"></ion-searchbar>
+
+<ion-list *ngFor="let anime of animes">
+    <ion-item class="listing-item" [routerLink]="['/detail', anime.mal_id]">
+        <ion-thumbnail slot="start">
+            <img src="{{anime.image_url}}" alt="{{anime.title}}">
+        </ion-thumbnail>
+        <ion-title class="anime-small-title">
+            {{anime.title}}
+        </ion-title>
+        <!--        moved to anime-detail screen-->
+        <!--        <ion-buttons slot="end">-->
+        <!--            <ion-icon name="heart-outline" (click)="saveToFav(anime)" title="Ajouter aux favoris"></ion-icon>-->
+        <!--            <ion-icon name="eye" class="ion-margin-horizontal" title="Ajouter à ma Viewed liste"></ion-icon>-->
+        <!--            <ion-icon name="videocam" title="Ajouter à ma Watch liste"></ion-icon>-->
+        <!--        </ion-buttons>-->
+    </ion-item>
+</ion-list>

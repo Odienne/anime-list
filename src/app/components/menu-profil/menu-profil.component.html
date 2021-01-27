@@ -1,0 +1,27 @@
+<ion-item lines="none">
+    <ion-chip slot="start">
+        <ion-avatar>
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+                 alt="default-avatar">
+        </ion-avatar>
+        <ion-label>{{user.username}}</ion-label>
+    </ion-chip>
+    <ion-button (click)="logout()" slot="end">
+        <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+</ion-item>
+
+<div class="menu-profil-links">
+    <ion-button expand="block" color="danger" [routerLink]="['/favoris', {favorites: favorites}]">
+        Favoris
+        <ion-icon class="ion-margin-start" name="heart"></ion-icon>
+    </ion-button>
+    <ion-button expand="block" color="success" [routerLink]="['/vues', {watchlist: watchlist}]">
+        Vus
+        <ion-icon class="ion-margin-start" name="eye"></ion-icon>
+    </ion-button>
+    <ion-button expand="block" color="primary" [routerLink]="['/a-voir', {viewed: viewed}]">
+        À voir
+        <ion-icon class="ion-margin-start" name="videocam"></ion-icon>
+    </ion-button>
+</div>

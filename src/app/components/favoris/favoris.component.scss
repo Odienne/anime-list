@@ -1,0 +1,14 @@
+.anime{
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+ion-toolbar{
+    --min-height: 30px;
+}
+
+ion-button{
+    background-color: red;
+    --background: red;
+    border-radius: 10px;
+}

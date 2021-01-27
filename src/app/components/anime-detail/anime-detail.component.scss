@@ -1,0 +1,60 @@
+.anime {
+  height: 240px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+
+  .title {
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    width: 100%;
+    color: white;
+  }
+}
+
+main {
+  font-size: 0.9em;
+
+  .icons-score {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .note {
+      padding: 6px;
+    }
+
+    .active {
+      color: red;
+    }
+  }
+
+  .synopsis {
+    text-align: justify;
+    font-style: italic;
+    padding: 16px 2px;
+  }
+}
+
+.anime-genres {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    font-size: 0.8em;
+    margin-right: 6px;
+  }
+}
+
+.side-infos {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}

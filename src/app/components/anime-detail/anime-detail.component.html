@@ -1,0 +1,46 @@
+<div *ngIf="anime" class="anime" style="background-image: url('{{anime.image_url}}')">
+    <h2 class="title">
+        {{anime.title}}
+    </h2>
+</div>
+
+<main *ngIf="anime" class="ion-margin">
+    <div class="icons-score">
+        <ion-buttons slot="start">
+            <ion-icon (click)="addToFavorites(anime)" name="heart-outline"  class="{{isFav ? 'active' : ''}}" title="Ajouter aux favoris"></ion-icon>
+            <ion-icon (click)="addToViewedList(anime)" name="eye"  class="{{isViewed ? 'active' : ''}} ion-margin-horizontal"
+                      title="Ajouter à ma Viewed liste"></ion-icon>
+            <ion-icon (click)="addToWatchList(anime)" name="videocam"  class="{{isInWatchlist ? 'active' : ''}}" title="Ajouter à ma Watch liste"></ion-icon>
+        </ion-buttons>
+        <p *ngIf="anime.score !== null">
+            <ion-badge color="danger" class="note">{{anime.score}}/10</ion-badge>
+        </p>
+        <div (click)="shareAnime(anime)">
+            <ion-button size="small" shape="round" fill="solid" color="secondary">
+                <ion-icon name="share-social-outline"
+                          title="Partager"></ion-icon>
+            </ion-button>
+        </div>
+    </div>
+    <div>
+        <ul class="anime-genres">
+            <li *ngFor="let genres of anime.genres">
+                <ion-badge>{{genres.name}}</ion-badge>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="synopsis">
+        {{anime.synopsis}}
+    </div>
+    <hr>
+    <div class="side-infos">
+        <div slot="start">
+            <ion-badge
+                    color="medium">{{airingStatus[anime.status] !== null ? airingStatus[anime.status] : "à venir"}}</ion-badge>
+        </div>
+        <div slot="end">
+            <ion-badge color="medium">{{anime.episodes}} eps ({{anime.type}})</ion-badge>
+        </div>
+    </div>
+</main>
